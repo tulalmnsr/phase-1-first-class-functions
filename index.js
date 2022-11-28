@@ -1,27 +1,18 @@
-const afterExercise = morningRoutine(liftWeights);
-// LOG: Go for a five-mile run
-// LOG: Pump iron
-
-afterExercise;
-//=> ƒ () { console.log(`Nom nom nom, this ${breakfast} is delicious!`); }
-
-
-
-function morningRoutine(exercise) {
-    let breakfast;
-  
-    if (exercise === liftWeights) {
-      breakfast = 'protein bar';
-    } else if (exercise === swimFortyLaps) {
-      breakfast = 'kale smoothie';
-    } else {
-      breakfast = 'granola';
-    }
+// Code your solution in this file!
+const returnFirstTwoDrivers = (driversArray)=>{
+  return driversArray.slice(0,2);
 }
-    exerciseRoutine(exercise);
-  
-    // we could give this function a name if we wanted to, but since
-    // it's only available _inside_ morningRoutine(), we don't need to
-    return function() {
-      console.log(`Nom nom nom, this ${breakfast} is delicious!`);
-    }
+
+const returnLastTwoDrivers = (driversArray)=>{
+  return driversArray.slice(driversArray.length-2)
+}
+
+const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers]
+
+const createFareMultiplier = (multiplier) => {
+  return (number) => number * multiplier
+}
+
+const fareDoubler = createFareMultiplier(2)
+const fareTripler = createFareMultiplier(3)
+const selectDifferentDrivers = (driversArray,fn) => fn(driversArray)
